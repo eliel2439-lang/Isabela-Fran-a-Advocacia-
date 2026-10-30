@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Isabela França Advocacia</title>
+  <meta name="description" content="Site institucional de Isabela França Advocacia. Atendimento jurídico com seriedade, clareza e proximidade. Fale pelo WhatsApp: (32) 99938-1232." />
+  <style>
+    :root {
+      --bg: #0f1720;
+      --bg-soft: #131f2d;
+      --card: #ffffff;
+      --gold: #d4b27a;
+      --gold-2: #f0debf;
+      --text: #eef2f7;
+      --muted: #b8c2d0;
+      --dark: #132033;
+      --shadow: 0 20px 50px rgba(0,0,0,.18);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #0c1420 0%, #121c28 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+    .topbar {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(12,20,32,.82);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 20px; padding: 16px 0;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 14px;
+      font-weight: 700; letter-spacing: .2px;
+    }
+    .brand-badge {
+      width: 42px; height: 42px; border-radius: 12px;
+      display: grid; place-items: center; background: linear-gradient(135deg, var(--gold), #9e7c49);
+      color: #101820; font-weight: 800;
+      box-shadow: var(--shadow);
+    }
+    .brand small { display: block; color: var(--muted); font-weight: 500; font-size: 12px; }
+    .menu { display: flex; gap: 22px; flex-wrap: wrap; color: var(--muted); }
+    .menu a:hover { color: #fff; }
+    .btn, .btn-outline {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 50px; padding: 0 22px; border-radius: 999px;
+      font-weight: 700; transition: .25s ease;
+    }
+    .btn {
+      background: linear-gradient(135deg, var(--gold), #b98a49);
+      color: #101820; box-shadow: var(--shadow);
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,.18); color: #fff;
+      background: rgba(255,255,255,.03);
+    }
+    .hero {
+      padding: 56px 0 26px;
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 1.12fr .88fr; gap: 34px; align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex; gap: 10px; align-items: center;
+      padding: 10px 14px; border-radius: 999px;
+      background: rgba(212,178,122,.12); border: 1px solid rgba(212,178,122,.22);
+      color: var(--gold-2); font-size: 14px; margin-bottom: 18px;
+    }
+    h1 {
+      margin: 0 0 16px; font-size: clamp(34px, 6vw, 62px); line-height: 1.08;
+      letter-spacing: -.03em;
+    }
+    .lead { font-size: 20px; color: var(--muted); max-width: 680px; margin-bottom: 24px; }
+    .hero-points { display: flex; flex-wrap: wrap; gap: 12px; margin: 24px 0 28px; }
+    .chip {
+      padding: 11px 14px; border-radius: 999px; border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03); color: #e8edf5; font-size: 14px;
+    }
+    .cta-group { display: flex; flex-wrap: wrap; gap: 14px; }
+    .hero-card {
+      position: relative; min-height: 560px; border-radius: 34px;
+      background: radial-gradient(circle at top right, rgba(212,178,122,.25), transparent 32%),
+                  linear-gradient(160deg, #1a2737, #0f1720);
+      overflow: hidden; box-shadow: var(--shadow); border: 1px solid rgba(255,255,255,.08);
+      display: flex; align-items: end; justify-content: center;
+      padding: 0;
+    }
+    .hero-card::before {
+      content: ''; position: absolute; inset: auto auto -80px -80px;
+      width: 300px; height: 300px; border-radius: 50%;
+      background: rgba(212,178,122,.18); filter: blur(10px);
+    }
+    .hero-card img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center;
+      display: block;
+    }
+    .hero-card .tag {
+      position: absolute; left: 20px; bottom: 20px;
+      background: rgba(10,18,28,.82); color: #fff;
+      border: 1px solid rgba(255,255,255,.12);
+      padding: 14px 18px; border-radius: 18px; backdrop-filter: blur(8px);
+      max-width: calc(100% - 40px);
+    }
+    .hero-card .tag strong { display: block; color: var(--gold-2); margin-bottom: 4px; }
+    section { padding: 34px 0; }
+    .section-card {
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 28px; padding: 34px;
+      box-shadow: var(--shadow);
+    }
+    .section-title { margin: 0 0 10px; font-size: clamp(28px, 4vw, 40px); }
+    .section-text { color: var(--muted); margin: 0 0 28px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 24px; padding: 24px;
+    }
+    .icon {
+      width: 52px; height: 52px; border-radius: 16px; display: grid; place-items: center;
+      background: rgba(212,178,122,.14); color: var(--gold-2); font-size: 22px; margin-bottom: 14px;
+    }
+    .card h3 { margin: 0 0 10px; font-size: 22px; }
+    .card p { margin: 0; color: var(--muted); }
+    .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 26px; align-items: center; }
+    .about-photo {
+      border-radius: 30px; overflow: hidden; background: #1a2533; min-height: 520px;
+      border: 1px solid rgba(255,255,255,.08); box-shadow: var(--shadow);
+    }
+    .about-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 22px; }
+    .stat {
+      padding: 18px; border-radius: 20px; background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+    .stat strong { display: block; color: var(--gold-2); font-size: 22px; }
+    .stat span { color: var(--muted); font-size: 14px; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .contact-box {
+      background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08);
+      border-radius: 24px; padding: 26px;
+    }
+    .contact-item { margin-bottom: 16px; }
+    .contact-item strong { display: block; margin-bottom: 4px; color: var(--gold-2); }
+    .footer {
+      padding: 28px 0 54px; color: var(--muted); font-size: 14px;
+    }
+    @media (max-width: 980px) {
+      .menu { display: none; }
+      .hero-grid, .about-grid, .contact-grid, .grid-3 { grid-template-columns: 1fr; }
+      .hero { padding-top: 28px; }
+      .hero-card { min-height: 420px; }
+      .about-photo { min-height: 380px; }
+      .section-card { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <div class="brand">
+        <div class="brand-badge">IF</div>
+        <div>
+          Isabela França Advocacia
+          <small>Atendimento jurídico com seriedade e proximidade</small>
+        </div>
+      </div>
+      <nav class="menu">
+        <a href="#inicio">Início</a>
+        <a href="#atuacao">Atuação</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <a class="btn" href="https://wa.me/5532999381232" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">⚖️ Atendimento personalizado • Consultoria jurídica</div>
+          <h1>Isabela França<br/>Advocacia</h1>
+          <p class="lead">Atendimento jurídico com clareza, responsabilidade e foco em um acompanhamento próximo para cada cliente.</p>
+          <div class="hero-points">
+            <span class="chip">Atendimento humanizado</span>
+            <span class="chip">Análise individual de cada caso</span>
+            <span class="chip">Atendimento sob agendamento</span>
+          </div>
+          <div class="cta-group">
+            <a class="btn" href="https://wa.me/5532999381232" target="_blank" rel="noopener">Falar no WhatsApp</a>
+            <a class="btn-outline" href="#sobre">Conhecer o escritório</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <img src="isabela-franca.png" alt="Foto profissional de Isabela França" />
+          <div class="tag">
+            <strong>Contato rápido</strong>
+            WhatsApp: (32) 99938-1232
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="atuacao">
+      <div class="container section-card">
+        <h2 class="section-title">Como posso ajudar</h2>
+        <p class="section-text">Um atendimento construído com atenção aos detalhes, orientação clara e compromisso com a melhor condução de cada demanda.</p>
+        <div class="grid-3">
+          <div class="card">
+            <div class="icon">📄</div>
+            <h3>Consultoria jurídica</h3>
+            <p>Orientação segura para dúvidas, análise de documentos e direcionamento estratégico para tomada de decisão.</p>
+          </div>
+          <div class="card">
+            <div class="icon">🤝</div>
+            <h3>Atendimento próximo</h3>
+            <p>Comunicação direta, acompanhamento das etapas do atendimento e suporte com linguagem clara e acessível.</p>
+          </div>
+          <div class="card">
+            <div class="icon">⚖️</div>
+            <h3>Análise de caso</h3>
+            <p>Avaliação cuidadosa de cada situação, com foco na melhor condução possível para o cliente.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre">
+      <div class="container about-grid">
+        <div class="about-photo">
+          <img src="isabela-franca.png" alt="Isabela França Advocacia" />
+        </div>
+        <div class="section-card">
+          <h2 class="section-title">Sobre Isabela França Advocacia</h2>
+          <p class="section-text">Um espaço pensado para oferecer atendimento jurídico com seriedade, acolhimento e organização. O objetivo é proporcionar ao cliente segurança, orientação adequada e um contato mais próximo durante o atendimento.</p>
+          <p class="section-text">Se você busca um atendimento responsável, com escuta atenta e foco na compreensão do seu caso, entre em contato para conversar.</p>
+          <div class="stats">
+            <div class="stat">
+              <strong>WhatsApp</strong>
+              <span>(32) 99938-1232</span>
+            </div>
+            <div class="stat">
+              <strong>Atendimento</strong>
+              <span>Com agendamento</span>
+            </div>
+            <div class="stat">
+              <strong>Modelo</strong>
+              <span>Atendimento personalizado</span>
+            </div>
+            <div class="stat">
+              <strong>Contato rápido</strong>
+              <span>Resposta direta pelo WhatsApp</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="container contact-grid">
+        <div class="section-card">
+          <h2 class="section-title">Entre em contato</h2>
+          <p class="section-text">Se preferir, envie uma mensagem diretamente pelo WhatsApp para receber atendimento inicial.</p>
+          <a class="btn" href="https://wa.me/5532999381232" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+        </div>
+        <div class="contact-box">
+          <div class="contact-item">
+            <strong>Nome</strong>
+            Isabela França Advocacia
+          </div>
+          <div class="contact-item">
+            <strong>Telefone</strong>
+            <a href="tel:+5532999381232">+55 32 99938-1232</a>
+          </div>
+          <div class="contact-item">
+            <strong>Endereço</strong>
+            Não informado.
+          </div>
+          <div class="contact-item">
+            <strong>WhatsApp direto</strong>
+            <a href="https://wa.me/5532999381232" target="_blank" rel="noopener">wa.me/5532999381232</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © Isabela França Advocacia — Site institucional atualizado com foto e dados de contato.
+    </div>
+  </footer>
+</body>
+</html>
